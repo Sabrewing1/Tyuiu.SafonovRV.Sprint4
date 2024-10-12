@@ -1,21 +1,21 @@
-using Tyuiu.SafonovRV.Sprint4.Task1.V15.Lib;
+using Tyuiu.SafonovRV.Sprint4.Task2.V17.Lib;
 
-namespace Tyuiu.SafonovRV.Sprint4.Task1.V15.Test
+namespace Tyuiu.SafonovRV.Sprint4.Task2.V17.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidCalculate()
+        public void CheckCalculate()
         {
             DataService ds = new DataService();
-
-            int[] numsArray = { 6, 7, 6, 7, 5, 7, 6, 7, 9, 4, 6, 5, 8, 5 };
+            int[] numsArray = { 3, 4, 5, 6, 7, 8, 9, 3, 4 };
 
             int res = ds.Calculate(numsArray);
-            int wait = 36;
+            int wait = 2835;
 
             Assert.AreEqual(wait, res);
+
         }
     }
 }
