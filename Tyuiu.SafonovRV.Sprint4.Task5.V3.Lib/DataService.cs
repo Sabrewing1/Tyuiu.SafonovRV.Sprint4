@@ -15,7 +15,7 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3.Lib
                     {
                         if (matrix[i, j] < 0)
                         {
-                            matrix[i, j] = 0;
+                            matrix[i, j] = 1;
                         }
                     }
                 }
