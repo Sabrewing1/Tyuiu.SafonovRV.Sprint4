@@ -7,13 +7,25 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidCalc()
+        public void TestCalculate()
         {
             DataService ds = new DataService();
-            int[,] matrix = new int[5, 5] { { 9, 6, 9, 3, 7 }, { 3, 3, 3, 8, 2 }, { 2, 1, 3, 5, 2 }, { 6, 2, 3, 2, 5 }, { 4, 5, 6, 9, 5 } };
-            int[,] res = ds.Calculate(matrix);
-            int[,] wait = { { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 } };
-            CollectionAssert.AreEqual(wait, res);
+            int[,] array = new int[5, 5] { { 1, 2, 4, 5, - 4 },
+                { 4, -2, -3, -2, 1 },
+                { 1, 2, 3, 4, 5 },
+                { 1, 2, 3, 4, 5 },
+                {1,2,3,4,5} };
+
+            int[,] waitArray = new int[5, 5] { { 1, 2, 4, 5, 0 },
+                { 4, 0, 0, 0, 1 },
+                { 1, 2, 3, 4, 5 },
+                { 1, 2, 3, 4, 5 },
+                {1,2,3,4,5} };
+
+            var res = ds.Calculate(array);
+
+            CollectionAssert.AreEqual(res, waitArray);
+
         }
     }
 }
