@@ -36,7 +36,7 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    matrix[i, j] = rnd.Next(-3, 5);
+                    matrix[i, j] = rnd.Next(-5, 4);
                 }
             }
 
