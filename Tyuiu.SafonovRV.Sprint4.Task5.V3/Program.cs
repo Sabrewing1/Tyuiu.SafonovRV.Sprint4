@@ -24,49 +24,45 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
             Console.Write("Введите количество строк в массиве: ");
-            int rows = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите количество столбцов в массиве: ");
-            int columns = Convert.ToInt32(Console.ReadLine());
+            int[,] array = new int[5, 5];
 
-            int[,] matrix = new int[rows, columns];
-
-            Console.WriteLine("**************************************************************************");
-
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < 5; j++)
                 {
-                    matrix[i, j] = rnd.Next(-5, 4);
+                    array[i, j] = rnd.Next(-3, 4);
                 }
             }
 
-            Console.WriteLine("\n Массив: ");
-
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < columns; j++)
-                {
-                    Console.Write($"{matrix[i, j]} \t");
-                }
+
                 Console.WriteLine();
+
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"[{i},{j}] = {array[i, j]}\t|\t");
+                }
             }
 
             Console.WriteLine();
-            Console.WriteLine("**************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                             *");
-            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("***************************************************************************");
 
-            int[,] res = ds.Calculate(matrix);
-
-            for (int i = 0; i < rows; i++)
+            int[,] arrayRes = ds.Calculate(array);
+            Console.WriteLine("Ответ равен:");
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < columns; j++)
-                {
-                    Console.Write($"{res[i, j]} \t");
-                }
                 Console.WriteLine();
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"[{i},{j}] = {arrayRes[i, j]}\t|\t");
+                }
             }
+
             Console.ReadKey();
+
         }
     }
 }
