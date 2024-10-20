@@ -6,14 +6,16 @@ namespace Tyuiu.SafonovRV.Sprint4.Task1.V15.Lib
     {
         public int Calculate(int[] array)
         {
-            
-                int sumArray = 0;
-                for (int i = 0; i <= array.Length - 1; i++)
-                    if (array[i] % 2 == 0)
-                    {
-                        sumArray += array[i];
-                    }
-                return sumArray;
+
+            int um = 1;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    um *= array[i];
+                }
             }
+            return um;
         }
     }
+}
