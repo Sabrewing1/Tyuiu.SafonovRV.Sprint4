@@ -39,7 +39,7 @@ namespace Tyuiu.SafonovRV.Sprint4.Task3.V26
             Console.WriteLine("***************************************************************************");
 
             // Инициализация двумерного массива
-            int[,] array = new int[5, 5]
+            int[,] mas2 = new int[5, 5] 
             {
             { 4, 3, 2, 6, 2 },
             { 5, 2, 2, 5, 6 },
@@ -48,19 +48,30 @@ namespace Tyuiu.SafonovRV.Sprint4.Task3.V26
             { 6, 5, 4, 3, 6 }
             };
 
-            // Переменная для хранения максимального элемента во второй строке
-            int maxInSecondRow = array[1, 0]; // Инициализируем максимальное значение первым элементом второй строки
-
-            // Поиск максимального элемента во второй строке
-            for (int j = 1; j < 5; j++)
+            Console.Write("Массив:{ ");
+            for (int i = 0; i < mas2.GetUpperBound(0) + 1; i++)
             {
-                if (array[1, j] > maxInSecondRow)
+                if (i != 0) { Console.Write("\t "); }
+                Console.Write("{");
+                for (int j = 0; j < mas2.Length / (mas2.GetUpperBound(0) + 1); j++)
                 {
-                    maxInSecondRow = array[1, j];
+                    Console.Write(mas2[i, j]);
+                    if (j != mas2.GetLength(0) - 1) { Console.Write(", "); }
                 }
+                Console.Write("}");
+                if (i != mas2.GetLength(0) - 1) { Console.WriteLine(","); }
             }
+            Console.WriteLine(" }");
 
-            Console.WriteLine("Максимальный элемент во второй строке массива: " + maxInSecondRow);
+            Console.WriteLine();
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("***************************************************************************");
+
+            int res = ds.Calculate(mas2);
+
+            Console.WriteLine("Максимальный элемент во второй строке массива = " + res);
+            Console.ReadKey();
         }
     }
 }
