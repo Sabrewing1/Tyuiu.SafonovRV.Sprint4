@@ -25,38 +25,34 @@ namespace Tyuiu.SafonovRV.Sprint4.Task1.V15
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-
             int len;
-            Console.WriteLine(" Введите количество элементов массива: ");
+            Console.Write("Введите количество элементов массива: ");
             len = Convert.ToInt32(Console.ReadLine());
-
             int[] numsArray = new int[len];
-
             for (int i = 0; i <= len - 1; i++)
             {
-                Console.Write(" Введите значение " + " элемента массива: ");
+                Console.Write("Введите значение " + i + " элемента массива: ");
                 numsArray[i] = Convert.ToInt32(Console.ReadLine());
             }
-            Console.WriteLine();
-            Console.WriteLine(" Массив: ");
-            for (int i = 0; i <= len - 1; i++)
+
+            Console.WriteLine("Исходныйы массив = " + numsArray);
+            for (int i = 0; i < numsArray.Length; i++)
             {
-                Console.Write(numsArray[i] + "\t");
+                Console.WriteLine(numsArray[i]);
             }
-            Console.WriteLine();
-            Console.WriteLine();
+
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            int res = ds.Calculate(numsArray);
-            Console.WriteLine(res);
+            int result = ds.Calculate(numsArray);
 
+            Console.WriteLine("Произведение всех четных элементов массива = " + result);
             Console.ReadKey();
         }
     }
 }
-        
-    
+
+
 
