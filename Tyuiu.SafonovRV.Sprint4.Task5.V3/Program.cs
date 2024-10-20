@@ -23,7 +23,7 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            Console.Write("Введите количество строк в массиве: ");
+       
             int[,] array = new int[5, 5];
 
             for (int i = 0; i < 5; i++)
