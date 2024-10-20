@@ -30,7 +30,7 @@ namespace Tyuiu.SafonovRV.Sprint4.Task5.V3
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    array[i, j] = rnd.Next(-3, 4);
+                    array[i, j] = rnd.Next(-5, 4);
                 }
             }
 
